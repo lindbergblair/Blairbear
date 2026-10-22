@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paris to Bordeaux</title>
+<meta name="theme-color" content="#1d3557">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon.svg">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Paris <span class="arrow">→</span> Bordeaux</h1>
+  <p class="sub">Door-to-door by train &amp; public transport</p>
+</header>
+<nav role="tablist">
+  <button role="tab" aria-selected="true" data-tab="plan">Plan</button>
+  <button role="tab" aria-selected="false" data-tab="trains">Trains</button>
+  <button role="tab" aria-selected="false" data-tab="tips">Tips</button>
+</nav>
+
+<main>
+  <section id="plan" class="panel">
+    <div class="card">
+      <label for="origin">Starting in Paris</label>
+      <select id="origin"></select>
+      <label for="dest">Going to in Bordeaux</label>
+      <select id="dest"></select>
+      <label for="time">Be at your Paris start by</label>
+      <input id="time" type="time" value="08:00">
+      <p class="hint">We pick the first train you can comfortably catch from your start time.</p>
+    </div>
+    <div id="result"></div>
+  </section>
+
+  <section id="trains" class="panel" hidden>
+    <p class="note">Typical weekday pattern, Paris Montparnasse → Bordeaux Saint-Jean (~2h05–2h10). Exact times vary by day.</p>
+    <div id="board"></div>
+  </section>
+
+  <section id="tips" class="panel" hidden>
+    <div id="tipList"></div>
+  </section>
+</main>
+
+<footer>
+  <p><strong>Times are representative, not live.</strong> Confirm before travelling:
+  <a href="https://www.sncf-connect.com" target="_blank" rel="noopener">SNCF Connect</a> ·
+  <a href="https://www.infotbm.com" target="_blank" rel="noopener">TBM Bordeaux</a> ·
+  <a href="https://www.ratp.fr" target="_blank" rel="noopener">RATP</a></p>
+</footer>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
